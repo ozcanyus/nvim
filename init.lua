@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -410,6 +410,21 @@ require('lazy').setup({
         --   },
         -- },
         -- pickers = {}
+        defaults = {
+          path_display = { 'tail' }, -- show only the file name (tail of the path)
+          sorting_strategy = 'ascending', -- optional: results ordered from top to bottom
+          layout_config = {
+            prompt_position = 'top', -- optional: moves the search bar to top
+          },
+        },
+        pickers = {
+          find_files = {
+            path_display = { 'tail' },
+          },
+          git_files = {
+            path_display = { 'tail' },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
